@@ -1,71 +1,738 @@
 <!doctype html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Serviceswithcf-presentation by mnimer</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Serviceswithcf-presentation !</h1>
-        <p>Presentation:  Interactive presentation for creating Services for Modern Web Applications, with CF</p>
+    <title>Creating Services for Modern Web Applications w/CF</title>
 
-        <p class="view"><a href="https://github.com/mnimer/ServicesWithCF-Presentation">View the Project on GitHub <small>mnimer/ServicesWithCF-Presentation</small></a></p>
+    <meta name="description" content="Creating Services for Modern Web Applications with ColdFusion">
+    <meta name="author" content="Mike Nimer">
+
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+
+    <!-- Avenir fonts via fonts.com -->
+    <link type="text/css" rel="stylesheet"
+          href="http://fast.fonts.com/cssapi/1af287b9-8247-4e14-8d41-71a662c811fc.css"/>
+
+    <link rel="stylesheet" href="lib/reveal.js/css/main.css">
+    <link rel="stylesheet" href="resource/css/theme/um.css" id="theme">
+    <link rel="stylesheet" href="lib/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="resource/css/editor.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+    <h2>Creating Services for <br/>Modern Web Applications <br/>w/CF</h2>
+
+    <p><br/><br/>
+        Presented by:<br>
+        Mike Nimer<br/>
+        <a href="http://twitter.com/mnimer" target="_blank">@mnimer</a><br/>
+        <a href="http://www.mikenimer.com" target="_blank">http://www.mikenimer.com</a>
+    </p>
+
+</section>
 
 
-        <ul>
-          <li><a href="https://github.com/mnimer/ServicesWithCF-Presentation/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/mnimer/ServicesWithCF-Presentation/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/mnimer/ServicesWithCF-Presentation">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>
-<a name="welcome-to-github-pages" class="anchor" href="#welcome-to-github-pages"><span class="octicon octicon-link"></span></a>Welcome to GitHub Pages.</h3>
+<section>
+    <h2>Once upon a time...</h2>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
-
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
-
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
-
-<h3>
-<a name="designer-templates" class="anchor" href="#designer-templates"><span class="octicon octicon-link"></span></a>Designer Templates</h3>
-
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
-
-<h3>
-<a name="rather-drive-stick" class="anchor" href="#rather-drive-stick"><span class="octicon octicon-link"></span></a>Rather Drive Stick?</h3>
-
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
-
-<h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
-
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/mnimer">mnimer</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 600px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Server Side Rendering</li>
+                <li>Request / Response Pages<br/>
+                    (CFM, JSP, PHP, etc.)
+                </li>
+            </ul>
+        </div>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
-  </body>
+</section>
+
+
+<section>
+    <h2>What is a "Modern Web Application" today?</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Single Page Apps</li>
+                <li>Data loaded via AJAX</li>
+                <li>CLIENT side logic and routing</li>
+                <li></li>
+                <li>Angular, Sencha, Knockout, Backbone</li>
+                <li>Yeoman, Grunt, Bower, And More...</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>Everything is not client side.</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Data Storage</li>
+                <li>Image Processing</li>
+                <li>PDF Processing</li>
+                <li>Security / LDAP</li>
+                <li>EMAIL</li>
+                <li>etc...</li>
+            </ul>
+        </div>
+    </div>
+    <h3>Think CFC not CFM</h3>
+</section>
+
+
+<section>
+    <h2>Connecting<br/>CLIENTS and SERVER</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>REST</li>
+                <li>Websockets</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h1>REST</h1>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <h3>REpresentational State Transfer</h3>
+            <ul>
+                <li>Roy Thomas Fielding</li>
+                <li><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm</a>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <section>
+        <h2>REST Constraints</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell;">
+                    <ul>
+                        <li>Uniform Interface</li>
+                        <li>Client-Server</li>
+                        <li>Stateless</li>
+                        <li>Cacheable</li>
+                        <li>Layered System</li>
+                        <li>Code on Demand (optional)</li>
+
+                        <!--
+                        <li>http://kellabyte.com/2011/09/04/clarifying-rest/</li>
+                        -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Uniform Interface</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align: left;">
+                    "The uniform interface between clients and servers, discussed below, simplifies and decouples the
+                    architecture, which enables each part to evolve independently."<br/>
+                    -- Wikipedia
+                    <br/><br/>
+                    Individual resources are identified in requests, for example using URIs in web-based REST systems.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Client-Server</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align: left;">
+                    "The client–server communication is further constrained by no client context being stored on the
+                    server between requests. Each request from any client contains all of the information necessary to
+                    service the request, and any session state is held in the client."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Stateless</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "The client–server communication is further constrained by no client context being stored on the
+                    server between requests. Each request from any client contains all of the information necessary to
+                    service the request, and any session state is held in the client."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Cacheable</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "As on the World Wide Web, clients can cache responses. Responses must therefore, implicitly or
+                    explicitly, define themselves as cacheable, or not, to prevent clients reusing stale or
+                    inappropriate data in response to further requests. Well-managed caching partially or completely
+                    eliminates some client–server interactions, further improving scalability and performance." <br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Layered System</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "A client cannot ordinarily tell whether it is connected directly to the end server, or to an
+                    intermediary along the way. Intermediary servers may improve system scalability by enabling
+                    load-balancing and by providing shared caches. They may also enforce security policies."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Code on Demand (optional)</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "Servers can temporarily extend or customize the functionality of a client by the transfer of
+                    executable code. Examples of this may include compiled components such as Java applets and
+                    client-side scripts such as JavaScript."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<section>
+    <h2>Evolution of REST</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-row">
+            <div style="display: table-cell;">
+                <ul>
+                    <li>Richardson Maturity Model</li>
+                    <li><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">http://martinfowler.com/articles/richardsonMaturityModel.html</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="display: table-row">
+            <div style="display: table-cell; vertical-align: middle;">
+                <img src="resource/image/RMM-Overview.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>RMM: Level 0<br/>(The Swamp of POX)</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>POX = Plain old XML</li>
+                <li>Lot’s of methods accessed via single URL.</li>
+                <li></li>
+                <li>Soap Services, XML - RPC</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/rmm0.json"></section>
+
+
+<section>
+    <h2>RMM: Level 1</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Unique URL for each resource</li>
+                <li>one HTTP method (get or post)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/rmm1.json"></section>
+
+
+<section>
+    <h2>RMM: Level 2</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-row">
+            <div style="display: table-cell; width: 50%; vertical-align: middle;">
+                <ul>
+                    <li>Unique URL for each resource</li>
+                    <li>Correct usage of HTTP verbs</li>
+                    <li>Correct usage of HTTP status codes</li>
+                </ul>
+            </div>
+            <div style="display: table-cell; width: 50%; vertical-align: middle;">
+                <ul>
+                    <li>GET = Get a resource or collection</li>
+                    <li>POST = Create or update</li>
+                    <li>PUT = Update whole object</li>
+                    <li>PATCH = Partial update</li>
+                    <li>DELETE = Delete</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--
+    <p>"GET and HEAD are special cases since they don't cause modifications.
+        Instead they allow us to inspect the current state of a resource"</p>
+        -->
+</section>
+
+<section class="editor" data-source="resource/data/restWithColdFusion.json"></section>
+
+
+<section>
+    <h2>REST - URL Design</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Verbs are bad (in URL)</li>
+                <ul>
+                    <li>/products/123/update</li>
+                    <li>/products/123/new</li>
+                </ul>
+                <li></li>
+                <li>Nouns are good</li>
+                <ul>
+                    <li>/products/123</li>
+                    <li>/products/123/inventory</li>
+                </ul>
+                <li></li>
+                <li>URLS represent a resource</li>
+                <li>URLS have implicit hierarchy</li>
+                <li>HTTP Methods determine operation</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>REST: Good URL / Bad URL</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>
+                    https://delicious.com/developers
+
+                    http://www.slideshare.net/Wombert/designing-http-interfaces-and-restful-web-services-confoo11-20110310?from_search=9
+                    Slide: 59/60
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <h2>REST for Resources</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>CRUD operations, use HTTP verbs
+                    <ul>
+                        <li>GET, POST, PUT, DELETE</li>
+                    </ul>
+                </li>
+                <li>Resource Services
+                    <ul>
+                        <li>1 for collections</li>
+                        <ul>
+                            <li>/user/all</li>
+                            <li>/user/search</li>
+                        </ul>
+                        <br/>
+                        <li>1 for individual item</li>
+                        <ul>
+                            <li>/user/123/detail</li>
+                            <li>/user/123/workHistory</li>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>REST for Non-Resources</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Calculate, Translate, Convert, etc..</li>
+
+                <li>use query string for filtering, searching, and sorting</li>
+
+                <li>/convert?from=XXX&to=XXX&amount=XXX</li>
+                <li>/search?q=XXXX</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <section>
+        <h2>REST Status Codes</h2>
+        <a href="http://www.infoq.com/articles/webber-rest-workflow">http://www.infoq.com/articles/webber-rest-workflow</a>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>200 = OK, This is what we like to see: everything's fine; let's keep going.</li>
+                    <li>201 = CREATED, We've just created a resource and everything's fine.</li>
+                    <li>202 = ACCEPTED, The service has accepted our request, and invites us to poll a URI in the
+                        Location header for the response. Great for <b>asynchronous</b> processing.
+                    </li>
+                    <li>204 = NO CONTENT, Sent if the response does not have body.</li>
+                    <li>303 = SEE OTHER, We need to interact with a different resource. We're probably still OK.</li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>REST Status Codes</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>400 = BAD REQUEST, We need to reformat the request and resubmit it.</li>
+                    <li>404 = NOT FOUND, The service is far too lazy (or secure) to give us a real reason why our
+                        request failed, but whatever the reason, we need to deal with it.
+                    </li>
+                    <li>405 = METHOD NOT ALLOWED</li>
+                    <li>406 = NOT ACCEPTABLE, No function in the REST service can produce the MIME type requested by the
+                        client.
+                    </li>
+                    <li>409 = CONFLICT, We tried to update the state of a resource, but the service isn't happy about
+                        it. We'll need to get the current state of the resource (either by checking the response entity
+                        body, or doing a GET) and figure out where to go from there.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>REST Status Codes</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>412 = PRECONDITION FAILED, The request wasn't processed because an Etag, If-Match or similar
+                        guard header failed evaluation. We need to figure out how to make forward progress.
+                    </li>
+                    <li>415 = UNSUPPORTED MEDIA TYPE ERROR, A resource is unable to consume the MIME type of client
+                        request.
+                    </li>
+                    <li>417 = EXPECTATION FAILED, You did the right thing by checking, but please don't try to send that
+                        request for real.
+                    </li>
+                    <li>500 = INTERNAL SERVER ERROR, The ultimate lazy response. The server's gone wrong and it's not
+                        telling why. Cross your fingers…
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<section>
+    <h2>Scalability</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Stateless</li>
+                <li>Caching</li>
+                <ul>
+                    <li>HTTP Caching: ETag, Last-Modified</li>
+                    <li>Server caching: ehCache</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/restWithColdFusion-caching.json"></section>
+
+
+<section>
+    <h2>RMM: Level 3</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Hypermedia / HATEOAS</li>
+                <li>(Hypermedia As The Engine of Application State)</li>
+
+                <li>All future actions the client may take are discovered within resource representations returned from
+                    the server.
+                </li>
+                <li>Advantage: If you need to change the URL to an Action, they can change it and it doesn't break every
+                    client.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>RMM: Level 3</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li><i>Alternative to Hypermedia is human-readable documentation that needs to be understood by a human
+                    being and hard-coded into a client.</i>
+                </li>
+                <br/>
+                <li><b>
+                    “If the engine of application state (and hence the API) is not being driven by hypertext, then it
+                    cannot be RESTful and cannot be a REST API. Period. Is there some broken manual somewhere that needs
+                    to be fixed?”</b><br/>
+                    ~Roy Fielding, <br/><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">“REST APIs must be hypertext-driven”</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/rmm3.json"></section>
+
+
+<section>
+    <h2>WEB SOCKET
+    </h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>
+                    Persistent Connection over HTTP
+
+                    Browser Support (image)
+
+                    Most libraries fall back to Long Polling
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/websocketsWithColdFusion.json"></section>
+<section class="editor" data-source="resource/data/websocketsWithJavascript.json"></section>
+
+
+<section>
+    <h1>Q&A</h1>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ****************************************************
+* Resources
+**************************************************** -->
+<section>
+    <h2>Resources</h2>
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 816px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li><a href="http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSe61e35da8d318518-5719eac51353e6bb244-8000.html" target="_blank">ColdFusion REST Documentation</a></li>
+                <li><a href="http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSe61e35da8d31851852cc9f7d1353e88b409-7fff.html" target="_blank">ColdFusion WebSocket Documentation</a></li>
+                <li><b>Twitter:</b><a href="http://www.twitter.com/@mnimer" target="_blank">@mnimer</a></li>
+
+                <li>Blog: <a href="http://roy.gbiv.com/untangled/">Untangled, musings of Roy T. Fielding</a></li>
+                <li>Article: <a href="http://www.infoq.com/articles/webber-rest-workflow">How to GET a Cup of Coffee</a></li>
+                <li>Article: <a href="https://blog.apigee.com/detail/api_design_honing_in_on_hateoas">API Design: Honing in on HATEOAS</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+
+<section>
+    <h2>Future</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Asynchronous REST calls with Javascript Promises</li>
+                <li>VERBS: OPTIONS, EXPECT
+                    <ul>
+                        <li>In Action Example:<br/><a href="http://www.infoq.com/articles/webber-rest-workflow">How to GET a Cup of Coffee</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<!-- template
+<section>
+    <h2></h2>
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</section>
+-->
+
+
+</div>
+
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
+
+<!-- Presentation progress bar -->
+<div class="progress"><span></span></div>
+
+</div>
+
+<script src="lib/reveal.js/lib/js/head.min.js"></script>
+<script src="lib/reveal.js/js/reveal.min.js"></script>
+
+<script src="lib/codemirror/lib/codemirror.js"></script>
+<script src="lib/codemirror/mode/xml/xml.js"></script>
+<script src="lib/codemirror/mode/javascript/javascript.js"></script>
+<script src="lib/codemirror/mode/css/css.js"></script>
+<script src="lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="lib/codemirror/lib/util/closetag.js"></script>
+
+<script>
+    Reveal.keyboardEnabled = true;
+    document.addEventListener('keydown', function (event) {
+        if (!Reveal.keyboardEnabled) {
+            event.stopImmediatePropagation();
+        }
+    }, false);
+
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        mouseWheel: false,
+        theme: 'um',
+        transition: 'concave',
+
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: 'lib/reveal.js/lib/js/highlight.js', async: true, callback: function () {
+                window.hljs.initHighlightingOnLoad();
+            } },
+            { src: 'lib/reveal.js/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: 'lib/jquery/jquery-1.8.2.min.js' },
+            { src: 'lib/bpopup/jquery.bpopup-0.7.0.min.js' },
+            { src: 'src/js/editor.js' }
+        ]
+    });
+
+</script>
+
+<script type="text/javascript">
+    // Gaug.es Analytics
+    var _gauges = _gauges || [];
+    (function () {
+        var t = document.createElement('script');
+        t.type = 'text/javascript';
+        t.async = true;
+        t.id = 'gauges-tracker';
+        t.setAttribute('data-site-id', '5065f9ac613f5d639400000e');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+    })();
+</script>
+
+</body>
 </html>
+>>>>>>> master

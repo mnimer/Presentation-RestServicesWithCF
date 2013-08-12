@@ -1,0 +1,18 @@
+{
+    "title": "RMM1 in CF",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "Remote CFC",
+                    "url": "resource/data/template/examples/rmm1/remoteCFC.html"
+                },
+                {
+                    "title": "Amazon S3",
+                    "url": "resource/data/template/examples/rmm1/amazonS3.html"
+                }
+            ]
+        }
+    ]
+}
