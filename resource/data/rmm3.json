@@ -1,0 +1,38 @@
+{
+    "title": "RMM3 in CF",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "Links",
+                    "url": "resource/data/template/examples/rmm3/links.html"
+                },
+                {
+                    "title": "CF Links",
+                    "url": "resource/data/template/examples/rmm3/linksWithCF.html"
+                },
+                {
+                    "title": "Twitter",
+                    "url": "resource/data/template/examples/rmm3/twitter.html"
+                },
+                {
+                    "title": "Netflix",
+                    "url": "resource/data/template/examples/rmm3/netflix.html"
+                },
+                {
+                    "title": "AtomPub",
+                    "url": "resource/data/template/examples/rmm3/atompub.html"
+                },
+                {
+                    "title": "LoveFilm API",
+                    "url": "resource/data/template/examples/rmm3/lovefilm.html"
+                },
+                {
+                    "title": "Launchpad",
+                    "url": "resource/data/template/examples/rmm3/launchpad.html"
+                }
+            ]
+        }
+    ]
+}

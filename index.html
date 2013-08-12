@@ -1,453 +1,737 @@
-<!doctype html>  
+<!doctype html>
 <html lang="en">
-	
-	<head>
-		<meta charset="utf-8">
-		
-		<title>An Introduction to jQuery & jQuery Mobile</title>
 
-		<meta name="description" content="An Introduction to jQuery & jQuery Mobile">
-		<meta name="author" content="Mike Nimer & Kellen Styler">
+<head>
+    <meta charset="utf-8">
 
-		<meta name="apple-mobile-web-app-capable" content="yes" />
-		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-		
-		<!-- Avenir fonts via fonts.com -->
-		<link type="text/css" rel="stylesheet" href="http://fast.fonts.com/cssapi/1af287b9-8247-4e14-8d41-71a662c811fc.css"/>
-		
-		<link rel="stylesheet" href="lib/reveal.js/css/main.css">
-		<link rel="stylesheet" href="resource/css/theme/um.css" id="theme">
-		<link rel="stylesheet" href="lib/reveal.js/lib/css/zenburn.css">
-		<link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
-		<link rel="stylesheet" href="resource/css/editor.css">
-	</head>
-	
-	<body>
-		
-		<div class="reveal">
-			
-			<!-- Used to fade in a background when a specific slide state is reached -->
-			<div class="state-background"></div>
-			
-			<!-- Any section element inside of this container is displayed as a slide -->
-			<div class="slides">
-				
-				<section>
-					<p><br>An introduction to</p>
-					<img width="750" height="320" src="resource/image/jQueryMobileLogo.png" alt="jQuery Mobile">
-					<p>Presented by:<br><a href="http://twitter.com/mnimer" target="_blank">@mnimer</a> & <a href="http://twitter.com/d3signerd" target="_blank">@d3signerd</a></p>
-				</section>
+    <title>Creating Services for Modern Web Applications w/CF</title>
 
+    <meta name="description" content="Creating Services for Modern Web Applications with ColdFusion">
+    <meta name="author" content="Mike Nimer">
 
-                <!-- ****************************************************
-                    * Expressions
-                    **************************************************** -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
 
-                <section>
-                    <h3>Expressions</h3>
-                    <div style="display: inline-table; width: 816px; height: 418px">
-                        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-                            <ul>
-                                <li>TBD Item 1</li>
-                                <li>TBD Item 2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section class="editor" data-source="resource/data/expressions.json"></section>
+    <!-- Avenir fonts via fonts.com -->
+    <link type="text/css" rel="stylesheet"
+          href="http://fast.fonts.com/cssapi/1af287b9-8247-4e14-8d41-71a662c811fc.css"/>
+
+    <link rel="stylesheet" href="lib/reveal.js/css/main.css">
+    <link rel="stylesheet" href="resource/css/theme/um.css" id="theme">
+    <link rel="stylesheet" href="lib/reveal.js/lib/css/zenburn.css">
+    <link rel="stylesheet" href="lib/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="resource/css/editor.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+<!-- Used to fade in a background when a specific slide state is reached -->
+<div class="state-background"></div>
+
+<!-- Any section element inside of this container is displayed as a slide -->
+<div class="slides">
+
+<section>
+    <h2>Creating Services for <br/>Modern Web Applications <br/>w/CF</h2>
+
+    <p><br/><br/>
+        Presented by:<br>
+        Mike Nimer<br/>
+        <a href="http://twitter.com/mnimer" target="_blank">@mnimer</a><br/>
+        <a href="http://www.mikenimer.com" target="_blank">http://www.mikenimer.com</a>
+    </p>
+
+</section>
 
 
+<section>
+    <h2>Once upon a time...</h2>
 
-                <!-- ****************************************************
-                    * Modifying HTML
-                    **************************************************** -->
-
-                <section>
-                    <h3>Manipulating HTML</h3>
-                    <div style="display: inline-table; width: 816px; height: 418px">
-                        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-                            <ul>
-                                <li>TBD Item 1</li>
-                                <li>TBD Item 2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section class="editor" data-source="resource/data/dom-manipulation.json"></section>
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 600px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Server Side Rendering</li>
+                <li>Request / Response Pages<br/>
+                    (CFM, JSP, PHP, etc.)
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
+<section>
+    <h2>What is a "Modern Web Application" today?</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Single Page Apps</li>
+                <li>Data loaded via AJAX</li>
+                <li>CLIENT side logic and routing</li>
+                <li></li>
+                <li>Angular, Sencha, Knockout, Backbone</li>
+                <li>Yeoman, Grunt, Bower, And More...</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
-                <!-- ****************************************************
-                    * Style with JQuery
-                    **************************************************** -->
+<section>
+    <h2>Everything is not client side.</h2>
 
-                <section>
-                    <h3>Styling - manipulate CSS</h3>
-                    <div style="display: inline-table; width: 816px; height: 418px">
-                        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-                            <ul>
-                                <li>TBD Item 1</li>
-                                <li>TBD Item 2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section>
-                    <h3>Styling - ThemeRoller</h3>
-                    <div style="display: inline-table; width: 816px; height: 418px">
-                        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-                            <ul>
-                                <li>TBD Item 1</li>
-                                <li>TBD Item 2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section class="editor" data-source="resource/data/styling.json"></section>
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Data Storage</li>
+                <li>Image Processing</li>
+                <li>PDF Processing</li>
+                <li>Security / LDAP</li>
+                <li>EMAIL</li>
+                <li>etc...</li>
+            </ul>
+        </div>
+    </div>
+    <h3>Think CFC not CFM</h3>
+</section>
 
 
+<section>
+    <h2>Connecting<br/>CLIENTS and SERVER</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>REST</li>
+                <li>Websockets</li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
-                <!-- ****************************************************
-                    * Animations with JQUERY
-                    **************************************************** -->
+<section>
+    <h1>REST</h1>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <h3>REpresentational State Transfer</h3>
+            <ul>
+                <li>Roy Thomas Fielding</li>
+                <li><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm</a>
+                </li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
-                <section>
-                    <h3>Animations</h3>
-                    <div style="display: inline-table; width: 816px; height: 418px">
-                        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-                            <ul>
-                                <li>TBD Item 1</li>
-                                <li>TBD Item 2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section class="editor" data-source="resource/data/animations.json"></section>
+<section>
+    <section>
+        <h2>REST Constraints</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell;">
+                    <ul>
+                        <li>Uniform Interface</li>
+                        <li>Client-Server</li>
+                        <li>Stateless</li>
+                        <li>Cacheable</li>
+                        <li>Layered System</li>
+                        <li>Code on Demand (optional)</li>
+
+                        <!--
+                        <li>http://kellabyte.com/2011/09/04/clarifying-rest/</li>
+                        -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Uniform Interface</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align: left;">
+                    "The uniform interface between clients and servers, discussed below, simplifies and decouples the
+                    architecture, which enables each part to evolve independently."<br/>
+                    -- Wikipedia
+                    <br/><br/>
+                    Individual resources are identified in requests, for example using URIs in web-based REST systems.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Client-Server</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align: left;">
+                    "The client–server communication is further constrained by no client context being stored on the
+                    server between requests. Each request from any client contains all of the information necessary to
+                    service the request, and any session state is held in the client."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Stateless</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "The client–server communication is further constrained by no client context being stored on the
+                    server between requests. Each request from any client contains all of the information necessary to
+                    service the request, and any session state is held in the client."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Cacheable</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "As on the World Wide Web, clients can cache responses. Responses must therefore, implicitly or
+                    explicitly, define themselves as cacheable, or not, to prevent clients reusing stale or
+                    inappropriate data in response to further requests. Well-managed caching partially or completely
+                    eliminates some client–server interactions, further improving scalability and performance." <br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2>Layered System</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "A client cannot ordinarily tell whether it is connected directly to the end server, or to an
+                    intermediary along the way. Intermediary servers may improve system scalability by enabling
+                    load-balancing and by providing shared caches. They may also enforce security policies."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section>
+        <h2>Code on Demand (optional)</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-row">
+                <div style="display: table-cell; text-align:left;">
+                    "Servers can temporarily extend or customize the functionality of a client by the transfer of
+                    executable code. Examples of this may include compiled components such as Java applets and
+                    client-side scripts such as JavaScript."<br/>
+                    -- Wikipedia
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<section>
+    <h2>Evolution of REST</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-row">
+            <div style="display: table-cell;">
+                <ul>
+                    <li>Richardson Maturity Model</li>
+                    <li><a href="http://martinfowler.com/articles/richardsonMaturityModel.html">http://martinfowler.com/articles/richardsonMaturityModel.html</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div style="display: table-row">
+            <div style="display: table-cell; vertical-align: middle;">
+                <img src="resource/image/RMM-Overview.png">
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>RMM: Level 0<br/>(The Swamp of POX)</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>POX = Plain old XML</li>
+                <li>Lot’s of methods accessed via single URL.</li>
+                <li></li>
+                <li>Soap Services, XML - RPC</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/rmm0.json"></section>
+
+
+<section>
+    <h2>RMM: Level 1</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Unique URL for each resource</li>
+                <li>one HTTP method (get or post)</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/rmm1.json"></section>
+
+
+<section>
+    <h2>RMM: Level 2</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-row">
+            <div style="display: table-cell; width: 50%; vertical-align: middle;">
+                <ul>
+                    <li>Unique URL for each resource</li>
+                    <li>Correct usage of HTTP verbs</li>
+                    <li>Correct usage of HTTP status codes</li>
+                </ul>
+            </div>
+            <div style="display: table-cell; width: 50%; vertical-align: middle;">
+                <ul>
+                    <li>GET = Get a resource or collection</li>
+                    <li>POST = Create or update</li>
+                    <li>PUT = Update whole object</li>
+                    <li>PATCH = Partial update</li>
+                    <li>DELETE = Delete</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--
+    <p>"GET and HEAD are special cases since they don't cause modifications.
+        Instead they allow us to inspect the current state of a resource"</p>
+        -->
+</section>
+
+<section class="editor" data-source="resource/data/restWithColdFusion.json"></section>
+
+
+<section>
+    <h2>REST - URL Design</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Verbs are bad (in URL)</li>
+                <ul>
+                    <li>/products/123/update</li>
+                    <li>/products/123/new</li>
+                </ul>
+                <li></li>
+                <li>Nouns are good</li>
+                <ul>
+                    <li>/products/123</li>
+                    <li>/products/123/inventory</li>
+                </ul>
+                <li></li>
+                <li>URLS represent a resource</li>
+                <li>URLS have implicit hierarchy</li>
+                <li>HTTP Methods determine operation</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>REST: Good URL / Bad URL</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>
+                    https://delicious.com/developers
+
+                    http://www.slideshare.net/Wombert/designing-http-interfaces-and-restful-web-services-confoo11-20110310?from_search=9
+                    Slide: 59/60
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
 
+<section>
+    <h2>REST for Resources</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>CRUD operations, use HTTP verbs
+                    <ul>
+                        <li>GET, POST, PUT, DELETE</li>
+                    </ul>
+                </li>
+                <li>Resource Services
+                    <ul>
+                        <li>1 for collections</li>
+                        <ul>
+                            <li>/user/all</li>
+                            <li>/user/search</li>
+                        </ul>
+                        <br/>
+                        <li>1 for individual item</li>
+                        <ul>
+                            <li>/user/123/detail</li>
+                            <li>/user/123/workHistory</li>
+                        </ul>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>REST for Non-Resources</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Calculate, Translate, Convert, etc..</li>
+
+                <li>use query string for filtering, searching, and sorting</li>
+
+                <li>/convert?from=XXX&to=XXX&amount=XXX</li>
+                <li>/search?q=XXXX</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <section>
+        <h2>REST Status Codes</h2>
+        <a href="http://www.infoq.com/articles/webber-rest-workflow">http://www.infoq.com/articles/webber-rest-workflow</a>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>200 = OK, This is what we like to see: everything's fine; let's keep going.</li>
+                    <li>201 = CREATED, We've just created a resource and everything's fine.</li>
+                    <li>202 = ACCEPTED, The service has accepted our request, and invites us to poll a URI in the
+                        Location header for the response. Great for <b>asynchronous</b> processing.
+                    </li>
+                    <li>204 = NO CONTENT, Sent if the response does not have body.</li>
+                    <li>303 = SEE OTHER, We need to interact with a different resource. We're probably still OK.</li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>REST Status Codes</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>400 = BAD REQUEST, We need to reformat the request and resubmit it.</li>
+                    <li>404 = NOT FOUND, The service is far too lazy (or secure) to give us a real reason why our
+                        request failed, but whatever the reason, we need to deal with it.
+                    </li>
+                    <li>405 = METHOD NOT ALLOWED</li>
+                    <li>406 = NOT ACCEPTABLE, No function in the REST service can produce the MIME type requested by the
+                        client.
+                    </li>
+                    <li>409 = CONFLICT, We tried to update the state of a resource, but the service isn't happy about
+                        it. We'll need to get the current state of the resource (either by checking the response entity
+                        body, or doing a GET) and figure out where to go from there.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section>
+        <h2>REST Status Codes</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>412 = PRECONDITION FAILED, The request wasn't processed because an Etag, If-Match or similar
+                        guard header failed evaluation. We need to figure out how to make forward progress.
+                    </li>
+                    <li>415 = UNSUPPORTED MEDIA TYPE ERROR, A resource is unable to consume the MIME type of client
+                        request.
+                    </li>
+                    <li>417 = EXPECTATION FAILED, You did the right thing by checking, but please don't try to send that
+                        request for real.
+                    </li>
+                    <li>500 = INTERNAL SERVER ERROR, The ultimate lazy response. The server's gone wrong and it's not
+                        telling why. Cross your fingers…
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<section>
+    <h2>Scalability</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Stateless</li>
+                <li>Caching</li>
+                <ul>
+                    <li>HTTP Caching: ETag, Last-Modified</li>
+                    <li>Server caching: ehCache</li>
+                </ul>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/restWithColdFusion-caching.json"></section>
+
+
+<section>
+    <h2>RMM: Level 3</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Hypermedia / HATEOAS</li>
+                <li>(Hypermedia As The Engine of Application State)</li>
+
+                <li>All future actions the client may take are discovered within resource representations returned from
+                    the server.
+                </li>
+                <li>Advantage: If you need to change the URL to an Action, they can change it and it doesn't break every
+                    client.
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+
+<section>
+    <h2>RMM: Level 3</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li><i>Alternative to Hypermedia is human-readable documentation that needs to be understood by a human
+                    being and hard-coded into a client.</i>
+                </li>
+                <br/>
+                <li><b>
+                    “If the engine of application state (and hence the API) is not being driven by hypertext, then it
+                    cannot be RESTful and cannot be a REST API. Period. Is there some broken manual somewhere that needs
+                    to be fixed?”</b><br/>
+                    ~Roy Fielding, <br/><a href="http://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven">“REST APIs must be hypertext-driven”</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/rmm3.json"></section>
+
+
+<section>
+    <h2>WEB SOCKET
+    </h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>
+                    Persistent Connection over HTTP
+
+                    Browser Support (image)
+
+                    Most libraries fall back to Long Polling
+
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/websocketsWithColdFusion.json"></section>
+<section class="editor" data-source="resource/data/websocketsWithJavascript.json"></section>
+
+
+<section>
+    <h1>Q&A</h1>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
 
+<!-- ****************************************************
+* Resources
+**************************************************** -->
+<section>
+    <h2>Resources</h2>
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 816px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li><a href="http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSe61e35da8d318518-5719eac51353e6bb244-8000.html" target="_blank">ColdFusion REST Documentation</a></li>
+                <li><a href="http://help.adobe.com/en_US/ColdFusion/10.0/Developing/WSe61e35da8d31851852cc9f7d1353e88b409-7fff.html" target="_blank">ColdFusion WebSocket Documentation</a></li>
+                <li><b>Twitter:</b><a href="http://www.twitter.com/@mnimer" target="_blank">@mnimer</a></li>
+
+                <li>Blog: <a href="http://roy.gbiv.com/untangled/">Untangled, musings of Roy T. Fielding</a></li>
+                <li>Article: <a href="http://www.infoq.com/articles/webber-rest-workflow">How to GET a Cup of Coffee</a></li>
+                <li>Article: <a href="https://blog.apigee.com/detail/api_design_honing_in_on_hateoas">API Design: Honing in on HATEOAS</a></li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
 
+<section>
+    <h2>Future</h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li>Asynchronous REST calls with Javascript Promises</li>
+                <li>VERBS: OPTIONS, EXPECT
+                    <ul>
+                        <li>In Action Example:<br/><a href="http://www.infoq.com/articles/webber-rest-workflow">How to GET a Cup of Coffee</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
 
 
-                <!-- ****************************************************
-                    * JQUERY MOBILE
-                    **************************************************** -->
-
-				<section>
-					<div style="display: inline-table; width: 820px; height: 600px">
-						<div style="display: table-cell; width: 410px; height: 600px; vertical-align: middle;">
-							<h3>So many devices... so little time.</h3>
-							<p><br></p>
-							<h4 style="color: #149B0E;">Is the web the answer?</h4>
-						</div>
-						<img class="photo" style="display: table-cell; width: 410px; height: 600px; " width="410" height="600" src="resource/image/SoManyDevices.png">
-					</div>
-				</section>
-				
-				<section>
-					<h3>The mobile web is complicated...</h3>
-					<img width="816" height="428" src="resource/image/MobileBuzzwords.png" alt="Graceful Degradation, Responsive Deisgn, Progressive Enhancement, Media Queries, Touch, Gestures, Opera, Android, Blackberry, Windows Phone, iOS, iPad, iPhone, Desktop, Internet Explorer, Chrome, Safari, WebKit, Accessability, Universal Access">
-				</section>
-				
-				<section>
-					<img width="816" height="355" src="resource/image/jQueryMobile.png" alt="jQuery Mobile">
-					<h3>... makes it easy.</h3>
-				</section>
-				
-				<section>
-					<h2>Examples</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<img width="408" height="418" src="resource/image/Examples.png" alt="Example Screenshots">
-						<div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-							<ul>
-								<li>Stanford University<br><a href="http://m.stanford.edu/" target="_blank" style="font-size: 22px;">http://m.stanford.edu/</a></a></li>
-								<li>Disney World<br><a href="http://m.disneyworld.disney.go.com/" target="_blank" style="font-size: 22px;">http://m.disneyworld.disney.go.com/</a></li>
-								<li>OpenTable<br><a href="http://m.opentable.com/" target="_blank" style="font-size: 22px;">http://m.opentable.com/</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
-				<section>
-					<h2>Built on</h2>
-					<a href="http://jquery.com/" target="_blank"><img width="816" height="209" src="resource/image/jQuery.png"></a>
-					<a href="http://jqueryui.com/" target="_blank"><img width="816" height="209" src="resource/image/jQueryUI.png"></a>
-				</section>
-				
-				<section>
-					<h2>Open Source</h2>
-					<img width="816" height="355" src="resource/image/Licenses.png">
-					<p><span style="display: inline-block; width: 50%; text-align: center;">GPL v2 License</span><span style="display: inline-block; width: 50%; text-align: center;">MIT License</span></p>
-				</section>
-				
-				<section>
-					<h2>Hosted on</h2>
-					<img width="816" height="355" src="resource/image/GitHub.png">
-					<p><a href="https://github.com/jquery/jquery-mobile" target="_blank">https://github.com/jquery/jquery-mobile</a></p>
-				</section>
-				
-				<section>
-					<h2>Sponsored by</h2>
-					<img width="816" height="428" src="resource/image/Sponsors.png" alt="Sponsor Logos">
-				</section>
-				
-				<section>
-					<h2>Cross Device</h2>
-					<img width="816" height="428" src="resource/image/CrossDevice.png" alt="Phone Tablet Desktop">
-				</section>
-				
-				<section>
-					<h2>Cross Platform</h2>
-					<img width="816" height="428" src="resource/image/CrossPlatform.png" alt="Platform Logos">
-				</section>
-				
-				<section>
-					<h2>Cross Browser</h2>
-					<img width="816" height="428" src="resource/image/CrossBrowser.png" alt="Browser Logos">
-				</section>
-				
-				<section>
-					<img class="photo" width="820" height="600" src="resource/image/HTML5-CSS3.png" alt="HTML5 CSS3">
-				</section>
-				
-				<section>
-					<h3 style="color: #149B0E;">Progressive Enhancement</h3>
-					<img class="photo" width="820" height="428" src="resource/image/ProgressiveEnhancement.png" alt="Progressive Enhancement and Graceful Degradation Diagram">
-					<h3 style="color: #DF3300;">Graceful Degradation</h3>
-				</section>
-				
-				<section>
-					<h2>Platform Support</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<img width="272" height="418" src="resource/image/PlatformSupport.png" alt="A, B, C Grade Browsers">
-						<div style="display: table-cell; width: 544px; height: 418px; vertical-align: middle;">
-							<ul>
-								<li>Full enhanced experience with Ajax-based animated page transitions.</li>
-								<li>Enhanced experience except without Ajax navigation features.</li>
-								<li>Basic, non-enhanced HTML experience that is still functional.</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
-				<section>
-					<h2>Unified User Interface</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<img width="408" height="418" src="resource/image/UnifiedUserInterface.png" alt="Gestures">
-						<div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-							<ul>
-								<li>Enhances standard HTML form elements.</li>
-								<li>Touch-optimized, platform agnostic, themeable controls.</li>
-								<li>Controls degrade to native equivalents.</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
-				<section>
-					<h2>Themeable Appearance</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<a href="http://jquerymobile.com/themeroller/" target="_blank"><img width="408" height="418" src="resource/image/ThemeRoller.png" alt="Theme Roller Logo"></a>
-						<div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-							<ul>
-								<li>Real-time preview.</li>
-								<li>26 unique color swatches.</li>
-								<li>Gradient tools.</li>
-								<li>Adobe Kuler integration.</li>
-								<li>Shareable theme URLs.</li>
-								<li>Download and import.</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
-				<section>
-					<h2>Touch and Gesture Events</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<img width="408" height="418" src="resource/image/Gestures.png" alt="Screenshots of jQuery Mobile UI">
-						<div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle; text-align: left;">
-							<ul>
-								<li style="padding-bottom: 110px;">Tap.</li>
-								<li style="padding-bottom: 110px;">Tap and Hold.</li>
-								<li>Swipe.</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
-				<section>
-					<h2>Navigation</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<img width="408" height="418" src="resource/image/Navigation.png" alt="Ajax Logo">
-						<div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-							<ul>
-								<li>Ajax-based page loading and navigation system.</li>
-								<li>Pages injected into DOM with animated transitions.</li>
-								<li>Maintains 'Back' button and bookmarking support.</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
-				<section>
-					<h2>Accessibility</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<img width="408" height="418" src="resource/image/UniversalAccess.png" alt="Universal Access Logo">
-						<div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-							<ul>
-								<li>WAI-ARIA compliant.</li>
-								<li>Screen reader support.</li>
-								<li>VoiceOver in iOS.</li>
-							</ul>
-						</div>
-					</div>
-				</section>
-				
-				<section>
-					<h2>When do I use it?</h2>
-					<img width="816" height="355" src="resource/image/Spectrum.png">
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<div style="display: table-cell; width: 272px;">
-							<p>Document</p>
-						</div>
-						<div style="display: table-cell; width: 272px;">
-							<p>Interactive</p>
-						</div>
-						<div style="display: table-cell; width: 272px;">
-							<p>Application</p>
-						</div>
-					</div>
-				</section>
-				
-				<section class="editor" data-source="resource/data/buttons.json"></section>
-				
-				<section class="editor" data-source="resource/data/form-elements.json"></section>
-				
-				<section class="editor" data-source="resource/data/list-views.json"></section>
-				
-				<section class="editor" data-source="resource/data/pages.json"></section>
-				
-				<section class="editor" data-source="resource/data/toolbars.json"></section>
-				
-				<section class="editor" data-source="resource/data/dialogs.json"></section>
+<!-- template
+<section>
+    <h2></h2>
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</section>
+-->
 
 
+</div>
 
+<!-- The navigational controls UI -->
+<aside class="controls">
+    <a class="left" href="#">&#x25C4;</a>
+    <a class="right" href="#">&#x25BA;</a>
+    <a class="up" href="#">&#x25B2;</a>
+    <a class="down" href="#">&#x25BC;</a>
+</aside>
 
+<!-- Presentation progress bar -->
+<div class="progress"><span></span></div>
 
-                <!-- ****************************************************
-                 * Putting it all together
-                 **************************************************** -->
-                <section>
-                    <h3>Putting it all together / Build an App</h3>
-                    <div style="display: inline-table; width: 816px; height: 418px">
-                        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-                            <ul>
-                                <li>TBD Item 1</li>
-                                <li>TBD Item 2</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
-                <section class="editor" data-source="resource/data/application1.json"></section>
+</div>
 
+<script src="lib/reveal.js/lib/js/head.min.js"></script>
+<script src="lib/reveal.js/js/reveal.min.js"></script>
 
+<script src="lib/codemirror/lib/codemirror.js"></script>
+<script src="lib/codemirror/mode/xml/xml.js"></script>
+<script src="lib/codemirror/mode/javascript/javascript.js"></script>
+<script src="lib/codemirror/mode/css/css.js"></script>
+<script src="lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+<script src="lib/codemirror/lib/util/closetag.js"></script>
 
+<script>
+    Reveal.keyboardEnabled = true;
+    document.addEventListener('keydown', function (event) {
+        if (!Reveal.keyboardEnabled) {
+            event.stopImmediatePropagation();
+        }
+    }, false);
 
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        mouseWheel: false,
+        theme: 'um',
+        transition: 'concave',
 
+        // Optional libraries used to extend on reveal.js
+        dependencies: [
+            { src: 'lib/reveal.js/lib/js/highlight.js', async: true, callback: function () {
+                window.hljs.initHighlightingOnLoad();
+            } },
+            { src: 'lib/reveal.js/lib/js/classList.js', condition: function () {
+                return !document.body.classList;
+            } },
+            { src: 'lib/jquery/jquery-1.8.2.min.js' },
+            { src: 'lib/bpopup/jquery.bpopup-0.7.0.min.js' },
+            { src: 'src/js/editor.js' }
+        ]
+    });
 
-                <!-- ****************************************************
-                * Resources
-                **************************************************** -->
-                <section>
-					<h2>Resources</h2>
-					<div style="display: inline-table; width: 816px; height: 418px">
-						<div style="display: table-cell; width: 816px; height: 418px; vertical-align: middle;">
-							<ul>
-								<li><b>Official website</b><br><a href="http://jquerymobile.com/" target="_blank">http://jquerymobile.com/</a></li>
-								<li><b>Documentation and demonstrations</b><br><a href="http://jquerymobile.com/demos/" target="_blank">http://jquerymobile.com/demos/</a></li>
-								<li><b>Twitter</b><br><a href="http://www.twitter.com/@jquerymobile" target="_blank">@jquerymobile</a></li>
-								<li><b>Books, plugins, extensions, etc.</b><br><a href="http://jquerymobile.com/resources/" target="_blank">http://jquerymobile.com/resources/</a></li>
-							</ul>
-						</div>
-					</div>
-				</section>
-			
-			</div>
-			
-			<!-- The navigational controls UI -->
-			<aside class="controls">
-				<a class="left" href="#">&#x25C4;</a>
-				<a class="right" href="#">&#x25BA;</a>
-				<a class="up" href="#">&#x25B2;</a>
-				<a class="down" href="#">&#x25BC;</a>
-			</aside>
-			
-			<!-- Presentation progress bar -->
-			<div class="progress"><span></span></div>
-			
-		</div>
-		
-		<script src="lib/reveal.js/lib/js/head.min.js"></script>
-		<script src="lib/reveal.js/js/reveal.min.js"></script>
-		
-		<script src="lib/codemirror/lib/codemirror.js"></script>
-		<script src="lib/codemirror/mode/xml/xml.js"></script>
-		<script src="lib/codemirror/mode/javascript/javascript.js"></script>
-		<script src="lib/codemirror/mode/css/css.js"></script>
-		<script src="lib/codemirror/mode/htmlmixed/htmlmixed.js"></script>
-		<script src="lib/codemirror/lib/util/closetag.js"></script>
-		
-		<script>
-			Reveal.keyboardEnabled = true;
-			document.addEventListener( 'keydown', function(event) { if (!Reveal.keyboardEnabled) event.stopImmediatePropagation(); }, false );
-			
-			// Full list of configuration options available here:
-			// https://github.com/hakimel/reveal.js#configuration
-			Reveal.initialize({
-				controls: true,
-				progress: true,
-				history: true,
-				mouseWheel: false,
-				history: false,
-				
-				theme: 'um',
-				transition: 'concave',
-				
-				// Optional libraries used to extend on reveal.js
-				dependencies: [
-					{ src: 'lib/reveal.js/lib/js/highlight.js', async: true, callback: function() { window.hljs.initHighlightingOnLoad(); } },
-					{ src: 'lib/reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-					{ src: 'lib/jquery/jquery-1.8.2.min.js' },
-					{ src: 'lib/bpopup/jquery.bpopup-0.7.0.min.js' },
-					{ src: 'src/js/editor.js' }
-				]
-			});
-			
-		</script>
-		
-		<script type="text/javascript">
-			// Gaug.es Analytics
-			var _gauges = _gauges || [];
-			(function() {
-				var t   = document.createElement('script');
-				t.type  = 'text/javascript';
-				t.async = true;
-				t.id    = 'gauges-tracker';
-				t.setAttribute('data-site-id', '5065f9ac613f5d639400000e');
-				t.src = '//secure.gaug.es/track.js';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(t, s);
-			})();
-		</script>
-		
-	</body>
+</script>
+
+<script type="text/javascript">
+    // Gaug.es Analytics
+    var _gauges = _gauges || [];
+    (function () {
+        var t = document.createElement('script');
+        t.type = 'text/javascript';
+        t.async = true;
+        t.id = 'gauges-tracker';
+        t.setAttribute('data-site-id', '5065f9ac613f5d639400000e');
+        t.src = '//secure.gaug.es/track.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(t, s);
+    })();
+</script>
+
+</body>
 </html>

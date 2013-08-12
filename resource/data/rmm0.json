@@ -1,0 +1,26 @@
+{
+    "title": "RMM0 in CF",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "Remote CFC",
+                    "url": "resource/data/template/examples/rmm0/remoteCFC.html"
+                },
+                {
+                    "title": "SOAP Request",
+                    "url": "resource/data/template/examples/rmm0/soap.html"
+                },
+                {
+                    "title": "XML-RPC",
+                    "url": "resource/data/template/examples/rmm0/xmlrpc.html"
+                },
+                {
+                    "title": "Flickr",
+                    "url": "http://www.flickr.com/services/api/request.rest.html"
+                }
+            ]
+        }
+    ]
+}

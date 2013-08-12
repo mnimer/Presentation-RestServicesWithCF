@@ -1,0 +1,27 @@
+{
+    "title": "REST With ColdFusion",
+    "sections": [
+        {
+            "title": "Example",
+            "steps": [
+                {
+                    "title": "Configuration",
+                    "url": "resource/data/template/examples/restWithCF/configuration.html"
+                },
+                {
+                    "title": "Collection",
+                    "url": "resource/data/template/examples/restWithCF/collection.html"
+                },
+                {
+                    "title": "CRUD",
+                    "url": "resource/data/template/examples/restWithCF/crud.html"
+                },
+                {
+                    "title": "Status Codes",
+                    "url": "resource/data/template/examples/restWithCF/statusCodes.html"
+                }
+
+            ]
+        }
+    ]
+}
