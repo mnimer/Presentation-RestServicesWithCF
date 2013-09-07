@@ -200,3 +200,21 @@ body:after {
 	     -o-transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 	        transition: width 800ms cubic-bezier(0.260, 0.860, 0.440, 0.985);
 }
+
+
+
+
+#frameworkLogos > div
+{
+    display: inline;
+    float: left;
+    padding: 20px;
+    width: 150px;
+    height: 100px;
+}
+
+#frameworkLogos img
+{
+    max-width: 150px;
+    max-height: 100px;
+}

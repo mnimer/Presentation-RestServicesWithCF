@@ -1,0 +1,50 @@
+<cfcomponent
+        REST="true"
+        RESTPATH="/userService">
+
+
+    <!---
+    URL ==========================================
+    GET: http://localhost:8500/userService/user/123
+    --->
+
+    <cffunction name="getUser"
+                access="remote"
+                HTTPMETHO="GET"
+                RESTPATH="/user/{id}">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+            // CHECK CACHE
+            if( cacheIdExists("user:#id#") )
+            {
+                var cachedItem = cacheGet("user:#id#");
+
+                // RETURN CACHED ITEM
+                var response = structNew();
+                response.status = 200;
+                response.content = user;
+                restSetResponse( response );
+            }
+            else
+            {
+                //create user;
+                var user = structNew();
+                user.id = id;
+
+                //ADD TO CACHE
+                cachePut("user:#id#" , user, createTimeSpan(0,1,0,0))>
+
+                var response = structNew();
+                response.status = 200;
+                response.content = user;
+                restSetResponse( response );
+            }
+
+        </cfscript>
+    </cffunction>
+
+
+
+</cfcomponent>

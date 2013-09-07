@@ -1,0 +1,79 @@
+<cfcomponent
+        REST="true"
+        RESTPATH="/userService">
+
+
+    <!---
+    URL ==========================================
+    GET: http://localhost:8500/userService/user/123
+    --->
+
+    <cffunction name="getUser"
+                access="remote"
+                HTTPMETHO="GET"
+                RESTPATH="/user/{id}">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+            var user = structNew();
+            user.id = id;
+            return user;
+        </cfscript>
+    </cffunction>
+
+
+    <!---
+    URL ==========================================
+    POST: http://localhost:8500/userService/user/123
+    --->
+
+    <cffunction name="createUser"
+                access="remote"
+                HTTPMETHO="POST"
+                RESTPATH="/user/{id}">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+            // create user
+        </cfscript>
+    </cffunction>
+
+
+    <!---
+    URL ==========================================
+    PUT: http://localhost:8500/userService/user/123
+    --->
+
+    <cffunction name="updateUser"
+                access="remote"
+                HTTPMETHO="PUT"
+                RESTPATH="/user/{id}">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+            // update user
+        </cfscript>
+    </cffunction>
+
+
+    <!---
+    URL ==========================================
+    DELETE: http://localhost:8500/userService/user/123
+    --->
+
+    <cffunction name="deleteUser"
+                access="remote"
+                HTTPMETHO="DELETE"
+                RESTPATH="/user/{id}">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+            // delete user
+        </cfscript>
+    </cffunction>
+
+</cfcomponent>

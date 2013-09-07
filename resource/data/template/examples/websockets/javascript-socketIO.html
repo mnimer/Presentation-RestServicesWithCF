@@ -1,0 +1,9 @@
+<script src="socket.io.js"></script>
+<script>
+    var socket = io.connect('http://example.org');
+    socket.on('NameOfEvent', function (data) {
+        console.log(data);
+        // send a new message back
+        socket.emit('Event2', { my: 'data' });
+    });
+</script>

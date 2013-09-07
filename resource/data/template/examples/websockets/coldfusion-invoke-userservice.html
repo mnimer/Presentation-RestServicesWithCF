@@ -1,0 +1,17 @@
+<cfcomponent>
+
+
+    <cffunction name="getUser"
+                access="public">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+            var user = structNew();
+            user.id = id;
+            return user;
+        </cfscript>
+    </cffunction>
+
+
+</cfcomponent>

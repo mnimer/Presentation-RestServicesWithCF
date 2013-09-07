@@ -56,9 +56,9 @@ creatorEditor = ( $targetSlide ) ->
 								#{ options }
 							</select>
 						</div>
-						<div style="display: table-cell; width: 410px; text-align: right;">
+						<!-- <div id="#previewBtn" style="display: table-cell; width: 410px; text-align: right;">
 							<button class="editor-preview-button">Preview</button>
-						</div>
+						</div> -->
 					</div>
 					<img class="editor-loading-indicator" src="resource/image/LoadingIndicator.gif" width="32" height="32">
 				"""

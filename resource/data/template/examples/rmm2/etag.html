@@ -1,0 +1,83 @@
+<cfcomponent
+        REST="true"
+        RESTPATH="/userService">
+
+
+    <!---
+    URL ==========================================
+    GET: http://localhost:8500/userService/user/123
+    --->
+
+    <cffunction name="getUser"
+                access="remote"
+                HTTPMETHO="GET"
+                RESTPATH="/user/{id}">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+           var etag = hash( getCurrentTemplatePath()  ); // should include rest path and url arguments
+            if (cgi.http_if_none_match eq etag)
+            {
+                var response = structNew();
+                response.status = 304;
+                restSetResponse( response );
+            }
+            else
+            {
+                //create user;
+                var user = structNew();
+                user.id = id;
+
+                var response = structNew();
+                response.status = 200;
+                response.headers['etag'] = etag;
+                response.content = user;
+                restSetResponse( response );
+            }
+        </cfscript>
+    </cffunction>
+
+
+    <!---
+    URL ==========================================
+    GET: http://localhost:8500/userService/user/123
+    --->
+
+    <cffunction name="getUser"
+                access="remote"
+                HTTPMETHO="GET"
+                RESTPATH="/user/{id}">
+
+        <cfargument name="id" restargsource="path"/>
+
+        <cfscript>
+           var etag = hash( getCurrentTemplatePath()  ); // should include rest path and url arguments
+            if (cgi.http_if_none_match eq etag)
+            {
+                var response = structNew();
+                response.status = 304;
+                restSetResponse( response );
+            }
+            else
+            {
+                // set cache time
+                var expires = (Now() + 1);
+                var httpExpires = GetHTTPTimeString( dtExpires );
+
+                //create user;
+                var user = structNew();
+                user.id = id;
+
+                var response = structNew();
+                response.status = 200;
+                response.headers['etag'] = etag;
+                response.headers['expires'] = httpExpires; //optional
+                response.content = user;
+                restSetResponse( response );
+            }
+        </cfscript>
+    </cffunction>
+
+
+</cfcomponent>

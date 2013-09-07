@@ -63,7 +63,7 @@
 
 
 <section>
-    <h2>What is a "Modern Web Application" today?</h2>
+    <h2>What are "Modern Web Applications" today?</h2>
 
     <div style="display: inline-table; width: 816px; height: 418px">
         <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
@@ -72,8 +72,17 @@
                 <li>Data loaded via AJAX</li>
                 <li>CLIENT side logic and routing</li>
                 <li></li>
-                <li>Angular, Sencha, Knockout, Backbone</li>
-                <li>Yeoman, Grunt, Bower, And More...</li>
+                <div id="frameworkLogos">
+
+                    <div><img src="resource/image/AngularJS-large.png"></div>
+                    <div><img src="resource/image/sencha-large.png"></div>
+                    <div><img src="resource/image/knockout-logo.png"></div>
+                    <div><img src="resource/image/backbone.png"></div>
+                    <div><img src="resource/image/yeoman-logo.png"></div>
+                    <div><img src="resource/image/grunt-logo.png"></div>
+                    <div><img src="resource/image/bower-logo.png"></div>
+
+                </div>
             </ul>
         </div>
     </div>
@@ -298,7 +307,7 @@
         <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
             <ul>
                 <li>Unique URL for each resource</li>
-                <li>one HTTP method (get or post)</li>
+                <li>Uses one or two HTTP methods (usually get or post)</li>
             </ul>
         </div>
     </div>
@@ -336,56 +345,121 @@
         -->
 </section>
 
-<section class="editor" data-source="resource/data/restWithColdFusion.json"></section>
+
+
 
 
 <section>
-    <h2>REST - URL Design</h2>
+    <section>
+        <h2>REST - URL Design</h2>
 
-    <div style="display: inline-table; width: 816px; height: 418px">
-        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-            <ul>
-                <li>Verbs are bad (in URL)</li>
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
                 <ul>
-                    <li>/products/123/update</li>
-                    <li>/products/123/new</li>
+                    <li>Verbs are bad (in URL)</li>
+                    <ul>
+                        <li>/product/123/update</li>
+                        <li>/product/123/delete</li>
+                    </ul>
+                    <li></li>
+
+                    <li>Nouns are good</li>
+                    <ul>
+                        <li>/product/123/requirements</li>
+                        <li>/product/123/inventory</li>
+                    </ul>
+
                 </ul>
-                <li></li>
-                <li>Nouns are good</li>
-                <ul>
-                    <li>/products/123</li>
-                    <li>/products/123/inventory</li>
-                </ul>
-                <li></li>
-                <li>URLS represent a resource</li>
-                <li>URLS have implicit hierarchy</li>
-                <li>HTTP Methods determine operation</li>
-            </ul>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section>
+        <h2>REST - URL Design</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>URLS have implicit hierarchy</li>
+                    <ul>
+                        <li>/order/123/products/321456</li>
+                    </ul>
+                    <li></li>
+
+                    <li>URLS represents a resource</li>
+                    <li>HTTP Method determines operation</li>
+
+                </ul>
+            </div>
+        </div>
+    </section>
 </section>
 
 
 <section>
-    <h2>REST: Good URL / Bad URL</h2>
+    <section>
+        <h2>REST: Bad URLs</h2>
 
-    <div style="display: inline-table; width: 816px; height: 418px">
-        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-            <ul>
-                <li>
-                    https://delicious.com/developers
-
-                    http://www.slideshare.net/Wombert/designing-http-interfaces-and-restful-web-services-confoo11-20110310?from_search=9
-                    Slide: 59/60
-                </li>
-            </ul>
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>Twitter</li>
+                    <ul>
+                        <li>POST: statuses/destroy/:id</li>
+                        <li>POST: direct_messages/destroy</li>
+                        <li>POST: friendships/create</li>
+                    </ul>
+                    <li></li>
+                    <li>Delicious</li>
+                    <ul>
+                        <li>GET: https://api.delicious.com/v1/posts/delete?url={URL}</li>
+                        <li>GET: https://api.delicious.com/v1/posts/add?url={URL}&description={...}&&tags={...}</li>
+                    </ul>
+                </ul>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <section>
+        <h2>REST: Good URLs</h2>
+
+        <div style="display: inline-table; width: 816px; height: 418px">
+            <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+                <ul>
+                    <li>CRUD</li>
+                    <ul>
+                        <li>GET: user/:id</li>
+                        <li>POST: user/:id</li>
+                        <li>PUT: user/:id</li>
+                        <li>DELETE: user/:id</li>
+                    </ul>
+                    <li></li>
+                    <li>Non Resources</li>
+                    <ul>
+                        <li>GET: /search?q=</li>
+                        <li>GET: /translate?from={...}&to={...}</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </section>
 </section>
 
 
 
+
+
 <section>
+    <h2>CFAdmin REST Settings</h2>
+    <img src="resource/image/cfadmin.png"/>
+</section>
+
+
+<section class="editor" data-source="resource/data/rmm2.json"></section>
+
+
+
+<!--section>
     <h2>REST for Resources</h2>
 
     <div style="display: inline-table; width: 816px; height: 418px">
@@ -406,7 +480,7 @@
                         <br/>
                         <li>1 for individual item</li>
                         <ul>
-                            <li>/user/123/detail</li>
+                            <li>/user/123</li>
                             <li>/user/123/workHistory</li>
                         </ul>
                     </ul>
@@ -415,24 +489,7 @@
 
         </div>
     </div>
-</section>
-
-<section>
-    <h2>REST for Non-Resources</h2>
-
-    <div style="display: inline-table; width: 816px; height: 418px">
-        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
-            <ul>
-                <li>Calculate, Translate, Convert, etc..</li>
-
-                <li>use query string for filtering, searching, and sorting</li>
-
-                <li>/convert?from=XXX&to=XXX&amount=XXX</li>
-                <li>/search?q=XXXX</li>
-            </ul>
-        </div>
-    </div>
-</section>
+</section-->
 
 
 <section>
@@ -501,6 +558,10 @@
     </section>
 </section>
 
+<section class="editor" data-source="resource/data/rmm2-statuscodes.json"></section>
+
+
+
 
 <section>
     <h2>Scalability</h2>
@@ -519,7 +580,7 @@
     </div>
 </section>
 
-<section class="editor" data-source="resource/data/restWithColdFusion-caching.json"></section>
+<section class="editor" data-source="resource/data/rmm2-caching.json"></section>
 
 
 <section>
@@ -531,12 +592,8 @@
                 <li>Hypermedia / HATEOAS</li>
                 <li>(Hypermedia As The Engine of Application State)</li>
 
-                <li>All future actions the client may take are discovered within resource representations returned from
-                    the server.
-                </li>
-                <li>Advantage: If you need to change the URL to an Action, they can change it and it doesn't break every
-                    client.
-                </li>
+                <li>All future actions the client may take are discovered within resource representations returned from the server.</li>
+                <li><b>Advantage:</b> If you need to change the URL to an Action, you can change it and it won't break every client.</li>
             </ul>
         </div>
     </div>
@@ -549,7 +606,7 @@
     <div style="display: inline-table; width: 816px; height: 418px">
         <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
             <ul>
-                <li><i>Alternative to Hypermedia is human-readable documentation that needs to be understood by a human
+                <li><b>Arguable:</b> <i>Alternative to Hypermedia is human-readable documentation that needs to be understood by a human
                     being and hard-coded into a client.</i>
                 </li>
                 <br/>
@@ -574,21 +631,50 @@
     <div style="display: inline-table; width: 816px; height: 418px">
         <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
             <ul>
-                <li>
-                    Persistent Connection over HTTP
+                <li>Persistent Connection over HTTP</li>
+                <ul>
+                    <li>Simultaneous bi-directional communication</li>
+                    <li>Low network latency</li>
+                </ul>
+                <li></li>
+                <li>Most libraries fall back to Long Polling</li>
 
-                    Browser Support (image)
+            </ul>
+        </div>
+    </div>
+</section>
+<section>
+    <h2>Communication Types</h2>
 
-                    Most libraries fall back to Long Polling
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <ul>
+                <li><b>Broadcast:</b> Follows a subscriber/publisher model where hosts include multiple clients and server. Publishing is possible in either of the following ways:</li>
+                <ul>
+                    <li>From client-side (by way of the server)</li>
+                    <li>Initiation from the server without client involvement</li>
+                </ul>
+                <li></li>
+                <li><b>Point-to-point:</b> A bi-directional communication between a specific client and server. This model does not involve any other hosts/multiple clients.</li>
 
-                </li>
             </ul>
         </div>
     </div>
 </section>
 
-<section class="editor" data-source="resource/data/websocketsWithColdFusion.json"></section>
-<section class="editor" data-source="resource/data/websocketsWithJavascript.json"></section>
+<section>
+    <h2>Browser Support
+    </h2>
+
+    <div style="display: inline-table; width: 816px; height: 418px">
+        <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
+            <img src="resource/image/websocket-browsers.png"/>
+        </div>
+    </div>
+</section>
+
+<section class="editor" data-source="resource/data/websockets-coldfusion.json"></section>
+<section class="editor" data-source="resource/data/websockets-javascript.json"></section>
 
 
 <section>
@@ -618,6 +704,7 @@
                 <li><b>Twitter:</b><a href="http://www.twitter.com/@mnimer" target="_blank">@mnimer</a></li>
 
                 <li>Blog: <a href="http://roy.gbiv.com/untangled/">Untangled, musings of Roy T. Fielding</a></li>
+                <li>Article: <a href="http://www.adobe.com/devnet/coldfusion/articles/restful-web-services.html">RESTful services in ColdFusion</a></li>
                 <li>Article: <a href="http://www.infoq.com/articles/webber-rest-workflow">How to GET a Cup of Coffee</a></li>
                 <li>Article: <a href="https://blog.apigee.com/detail/api_design_honing_in_on_hateoas">API Design: Honing in on HATEOAS</a></li>
             </ul>
@@ -633,10 +720,10 @@
     <div style="display: inline-table; width: 816px; height: 418px">
         <div style="display: table-cell; width: 408px; height: 418px; vertical-align: middle;">
             <ul>
-                <li>Asynchronous REST calls with Javascript Promises</li>
+                <li>Asynchronous REST with Javascript Promises</li>
                 <li>VERBS: OPTIONS, EXPECT
                     <ul>
-                        <li>In Action Example:<br/><a href="http://www.infoq.com/articles/webber-rest-workflow">How to GET a Cup of Coffee</a></li>
+                        <li>In Action Example: <a href="http://www.infoq.com/articles/webber-rest-workflow">How to GET a Cup of Coffee</a></li>
                     </ul>
                 </li>
             </ul>

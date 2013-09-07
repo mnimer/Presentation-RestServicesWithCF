@@ -1,0 +1,22 @@
+{
+    "title": "WebSockets with ColdFusion",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "ColdFusion - Application.cfc",
+                    "url": "resource/data/template/examples/websockets/coldfusion-application-cfc.html"
+                },
+                {
+                    "title": "ColdFusion - Publish Message after REST call",
+                    "url": "resource/data/template/examples/websockets/coldfusion-rest-webservice-publish.html"
+                },
+                {
+                    "title": "ColdFusion - User Service",
+                    "url": "resource/data/template/examples/websockets/coldfusion-invoke-userservice.html"
+                }
+            ]
+        }
+    ]
+}

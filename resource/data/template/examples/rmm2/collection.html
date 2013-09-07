@@ -1,0 +1,38 @@
+<cfcomponent
+        REST="true"
+        RESTPATH="/productService">
+
+
+    <!---
+    URL ==========================================
+    GET: http://localhost:8500/productService/products/search?q=
+    --->
+
+    <cffunction name="searchProducts"
+                access="remote"
+                HTTPMETHOD="GET"
+                RESTPATH="/products/search">
+
+        <cfargument name="q" restargsource="query"/>
+
+        <cfscript>
+            // query database for products
+        </cfscript>
+    </cffunction>
+
+
+    <!---
+    URL ==========================================
+    GET: http://localhost:8500/productService/products/exclusive
+    --->
+
+    <cffunction name="getAllExclusiveProducts"
+                access="remote"
+                HTTPMETHOD="GET"
+                RESTPATH="/products/exclusive">
+
+        <cfscript>
+            // query database for exclusive products
+        </cfscript>
+    </cffunction>
+</cfcomponent>

@@ -1,8 +1,16 @@
-<link rel = "/linkrels/appointment/cancel"
-      uri = "/slots/1234/appointment"/>
+<!-- URL back to self -->
+<link rel="self"
+      href="http://example.org/userService/user/123"/>
 
+<!-- URL to edit user -->
 <link rel="edit"
-      href="http://example.org/blog/edit/a-day-at-the-beach.atom"/>
+      href="http://example.org/userService/user/123"/>
 
-<link rel="alternate" type="text/html"
-      href="http://example.org/blog/a-day-at-the-beach.html"/>
+<!-- example of alternate formats -->
+<link rel="specifications"
+      type="applications/pdf"
+      href="http://example.org/userService/user/123/specifications"/>
+
+<!-- custom rel -->
+<link rel = "/users/delete"
+      uri = "http://example.org/userService/user/123"/>

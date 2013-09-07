@@ -1,0 +1,18 @@
+{
+    "title": "ColdFusion REST",
+    "sections": [
+        {
+            "title": "Example",
+            "steps": [
+                {
+                    "title": "CRUD",
+                    "url": "resource/data/template/examples/rmm2/crud.html"
+                },
+                {
+                    "title": "Collection",
+                    "url": "resource/data/template/examples/rmm2/collection.html"
+                }
+            ]
+        }
+    ]
+}

@@ -1,24 +1,20 @@
 {
-    "title": "RMM0 in CF",
+    "title": "RMM: Level 0",
     "sections": [
         {
             "title": "Examples",
             "steps": [
                 {
-                    "title": "Remote CFC",
-                    "url": "resource/data/template/examples/rmm0/remoteCFC.html"
+                    "title": "Remote CFC / RPC",
+                    "url": "resource/data/template/examples/rmm0/CfcRMM0.html"
                 },
                 {
-                    "title": "SOAP Request",
-                    "url": "resource/data/template/examples/rmm0/soap.html"
+                    "title": "Flickr RPC",
+                    "url": "resource/data/template/examples/rmm0/flickr-echo.html"
                 },
                 {
-                    "title": "XML-RPC",
-                    "url": "resource/data/template/examples/rmm0/xmlrpc.html"
-                },
-                {
-                    "title": "Flickr",
-                    "url": "http://www.flickr.com/services/api/request.rest.html"
+                    "title": "Flickr SOAP",
+                    "url": "resource/data/template/examples/rmm0/flickr-soap.html"
                 }
             ]
         }

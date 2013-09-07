@@ -1,0 +1,18 @@
+{
+    "title": "ColdFusion REST Caching",
+    "sections": [
+        {
+            "title": "Examples",
+            "steps": [
+                {
+                    "title": "Caching with ETAGS",
+                    "url": "resource/data/template/examples/rmm2/etag.html"
+                },
+                {
+                    "title": "Caching with ehCache",
+                    "url": "resource/data/template/examples/rmm2/caching.html"
+                }
+            ]
+        }
+    ]
+}

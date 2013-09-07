@@ -1,0 +1,32 @@
+<cfwebsocket name="demoSocket"
+             subscribeto="DemoChannel"
+             onMessage="msgHandler"
+             onOpen="openHandler"/>
+
+<script>
+    var sendMessage = function(text)
+    {
+        // Client says Hello World
+        demoSocket.publish("DemoChannel", text);
+    }
+
+    var msgHandler = function(message)
+    {
+        // Get data from the received message token
+        var data = message.data;
+
+        if(data)
+        {
+            // If data exists do something
+        }
+    }
+
+    var openHandler = function()
+    {
+        // do nothing
+    }
+
+</script>
+
+<button onclick="sendMesage('test message');">Send Test Message</button>
+
