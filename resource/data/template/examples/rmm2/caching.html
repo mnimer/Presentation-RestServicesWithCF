@@ -1,11 +1,11 @@
 <cfcomponent
         REST="true"
-        RESTPATH="/userService">
+        RESTPATH="/rmm2Caching">
 
 
     <!---
     URL ==========================================
-    GET: http://localhost:8500/userService/user/123
+    GET: http://localhost:8500/rest/services/rmm2Caching/user/123.{format}
     --->
 
     <cffunction name="getUser"
@@ -13,13 +13,13 @@
                 HTTPMETHO="GET"
                 RESTPATH="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
             // CHECK CACHE
             if( cacheIdExists("user:#id#") )
             {
-                var cachedItem = cacheGet("user:#id#");
+                var user = cacheGet("user:#id#");
 
                 // RETURN CACHED ITEM
                 var response = structNew();
@@ -32,9 +32,10 @@
                 //create user;
                 var user = structNew();
                 user.id = id;
+                user.timestamp = now().getTime();
 
                 //ADD TO CACHE
-                cachePut("user:#id#" , user, createTimeSpan(0,1,0,0))>
+                cachePut("user:#id#" , user, createTimeSpan(0,1,0,0));
 
                 var response = structNew();
                 response.status = 200;

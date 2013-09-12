@@ -1,19 +1,20 @@
 <cfcomponent
-        REST="true"
-        RESTPATH="/userService">
+        rest="true"
+        restPath="/rmm2Status">
 
 
     <!---
     URL ==========================================
-    GET: http://localhost:8500/userService/user/123
+    GET: http://localhost:8500/rest/services/rmm2Status/user/123.{format}
     --->
 
-    <cffunction name="getUser"
+    <cffunction name="loadUser"
                 access="remote"
-                HTTPMETHO="GET"
-                RESTPATH="/user/{id}">
+                returntype="void"
+                httpMethod="GET"
+                restPath="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
             // create user
@@ -30,57 +31,66 @@
     </cffunction>
 
 
+
     <!---
     URL ==========================================
-    POST: http://localhost:8500/userService/user/123
+    POST: http://localhost:8500/rest/services/rmm2Status/user/123.{format}
     --->
 
     <cffunction name="createUser"
                 access="remote"
-                HTTPMETHO="POST"
-                RESTPATH="/user/{id}">
+                returntype="struct"
+                httpMethod="POST"
+                restPath="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
-            // create user
+            // todo create user
 
             // return the response object
             var response = structNew();
             response.status = 201; // 201=Item Created
             restSetResponse( response );
         </cfscript>
+    </cffunction>
+
+
+
+    <!---
+    URL ==========================================
+    POST: http://localhost:8500/rest/services/rmm2Status/user/123.{format}
+      --->
+
+    <cffunction name="createUserWithError"
+                access="remote"
+                returntype="Any"
+                httpMethod="POST"
+                restPath="/error1/{id}">
+
+        <cfargument name="id" type="string" restargsource="path"/>
+
+        <cfscript>
+            // return the response object
+            var response = structNew();
+            response.status = 409; // 200=Everything OK
+            response.content = "Conflict message";
+            restSetResponse( response );
         </cfscript>
     </cffunction>
 
 
     <!---
     URL ==========================================
-    POST: http://localhost:8500/userService/user/123
-    --->
-
-    <cffunction name="createUserWithError"
+    POST: http://localhost:8500/rest/services/rmm2Status/user/123.{format}
+     --->
+    <cffunction name="createUserWithConflict"
                 access="remote"
-                HTTPMETHO="POST"
-                RESTPATH="/user/{id}">
+                returntype="struct"
+                httpMethod="POST"
+                restPath="/error2/{id}">
 
-        <cfargument name="id" restargsource="path"/>
-
-        <CFTHROW ERRORCODE="409" message="Conflict with existing user" />
-    </cffunction>
-
-
-    <!---
-    URL ==========================================
-    POST: http://localhost:8500/userService/user/123
-    --->
-
-    <cffunction name="createUserWithError"
-                access="remote"
-                HTTPMETHO="POST"
-                RESTPATH="/user/{id}">
-
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
 
         <cfscript>
@@ -93,7 +103,7 @@
 
             // return the response object
             var response = structNew();
-            RESPONSE.STATUS = 409; // 409=CONFLICT
+            response.status = 409; // 409=CONFLICT
             response.content = structNew();
             response.content.attempted = newUser;
             response.content.existing = oldUser;

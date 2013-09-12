@@ -1,11 +1,11 @@
 <cfcomponent
         REST="true"
-        RESTPATH="/userService">
+        RESTPATH="/rmm2Crud">
 
 
     <!---
     URL ==========================================
-    GET: http://localhost:8500/userService/user/123
+    GET: http://localhost:8500/rest/services/rmm2Crud/user/123.{format}
     --->
 
     <cffunction name="getUser"
@@ -13,7 +13,7 @@
                 HTTPMETHO="GET"
                 RESTPATH="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
             var user = structNew();
@@ -25,7 +25,7 @@
 
     <!---
     URL ==========================================
-    POST: http://localhost:8500/userService/user/123
+    POST: http://localhost:8500/rest/services/rmm2Crud/user/123.{format}
     --->
 
     <cffunction name="createUser"
@@ -33,7 +33,7 @@
                 HTTPMETHO="POST"
                 RESTPATH="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
             // create user
@@ -43,7 +43,7 @@
 
     <!---
     URL ==========================================
-    PUT: http://localhost:8500/userService/user/123
+    PUT: http://localhost:8500/rest/services/rmm2Crud/user/123.{format}
     --->
 
     <cffunction name="updateUser"
@@ -51,7 +51,7 @@
                 HTTPMETHO="PUT"
                 RESTPATH="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
             // update user
@@ -61,7 +61,7 @@
 
     <!---
     URL ==========================================
-    DELETE: http://localhost:8500/userService/user/123
+    DELETE: http://localhost:8500/rest/services/rmm2Crud/user/123.{format}
     --->
 
     <cffunction name="deleteUser"
@@ -69,7 +69,7 @@
                 HTTPMETHO="DELETE"
                 RESTPATH="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
             // delete user

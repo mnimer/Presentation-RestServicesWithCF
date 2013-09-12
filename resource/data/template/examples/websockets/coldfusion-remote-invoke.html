@@ -10,17 +10,13 @@
 
 
     <cffunction name="getUser"
-                access="remote"
-                HTTPMETHO="PUT"
-                RESTPATH="/user/{id}">
-
-        <cfargument name="id" restargsource="path"/>
+                access="remote">
 
         <cfscript>
             // UPDATE USER
 
             // Send out a message to all clients that the user has be updated
-            wsPublish("DemoChannel", "{'message':'USER_CREATED', 'id':'#id#'}");
+            wsPublish("wsDemoChannel", "{'message':'USER_CREATED', 'timestamp':'#now().getTime()#'}");
         </cfscript>
     </cffunction>
 

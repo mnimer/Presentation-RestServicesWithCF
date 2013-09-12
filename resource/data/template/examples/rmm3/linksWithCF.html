@@ -1,11 +1,11 @@
 <cfcomponent
         REST="true"
-        RESTPATH="/userService">
+        RESTPATH="/rmm3">
 
 
     <!---
     URL ==========================================
-    GET: http://localhost:8500/userService/user/123
+    GET: http://localhost:8500/rest/services/rmm3/user/123.json
     --->
 
     <cffunction name="getUser"
@@ -13,7 +13,7 @@
                 HTTPMETHO="GET"
                 RESTPATH="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
 
         <cfscript>
             var user = structNew();

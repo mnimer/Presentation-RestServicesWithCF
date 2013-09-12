@@ -10,11 +10,11 @@
                 },
                 {
                     "title": "ColdFusion - Publish Message after REST call",
-                    "url": "resource/data/template/examples/websockets/coldfusion-rest-webservice-publish.html"
+                    "url": "resource/data/template/examples/websockets/coldfusion-remote-invoke.html"
                 },
                 {
-                    "title": "ColdFusion - User Service",
-                    "url": "resource/data/template/examples/websockets/coldfusion-invoke-userservice.html"
+                    "title": "ColdFusion - CFML Client",
+                    "url": "resource/data/template/examples/websockets/coldfusion-cfml-client.html"
                 }
             ]
         }

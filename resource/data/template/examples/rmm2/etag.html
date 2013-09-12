@@ -1,58 +1,23 @@
 <cfcomponent
         REST="true"
-        RESTPATH="/userService">
+        RESTPATH="/rmm2Etag">
 
 
     <!---
     URL ==========================================
-    GET: http://localhost:8500/userService/user/123
+    GET: http://localhost:8500/rest/services/rmm2Etag/test/123.{format}
     --->
-
-    <cffunction name="getUser"
+    <cffunction name="loadUser"
                 access="remote"
-                HTTPMETHO="GET"
-                RESTPATH="/user/{id}">
+                returntype="void"
+                httpMethod="GET"
+                restPath="/user/{id}">
 
-        <cfargument name="id" restargsource="path"/>
+        <cfargument name="id" type="string" restargsource="path"/>
+
 
         <cfscript>
-           var etag = hash( getCurrentTemplatePath()  ); // should include rest path and url arguments
-            if (cgi.http_if_none_match eq etag)
-            {
-                var response = structNew();
-                response.status = 304;
-                restSetResponse( response );
-            }
-            else
-            {
-                //create user;
-                var user = structNew();
-                user.id = id;
-
-                var response = structNew();
-                response.status = 200;
-                response.headers['etag'] = etag;
-                response.content = user;
-                restSetResponse( response );
-            }
-        </cfscript>
-    </cffunction>
-
-
-    <!---
-    URL ==========================================
-    GET: http://localhost:8500/userService/user/123
-    --->
-
-    <cffunction name="getUser"
-                access="remote"
-                HTTPMETHO="GET"
-                RESTPATH="/user/{id}">
-
-        <cfargument name="id" restargsource="path"/>
-
-        <cfscript>
-           var etag = hash( getCurrentTemplatePath()  ); // should include rest path and url arguments
+            var etag = hash( id  ); // should include rest path and url arguments
             if (cgi.http_if_none_match eq etag)
             {
                 var response = structNew();
@@ -62,21 +27,25 @@
             else
             {
                 // set cache time
-                var expires = (Now() + 1);
-                var httpExpires = GetHTTPTimeString( dtExpires );
+                var expires = (Now() + 10);
+                var httpExpires = GetHTTPTimeString( expires );
 
                 //create user;
                 var user = structNew();
                 user.id = id;
+                user.timestamp = now().getTime();
+
 
                 var response = structNew();
                 response.status = 200;
                 response.headers['etag'] = etag;
                 response.headers['expires'] = httpExpires; //optional
-                response.content = user;
+                response.content = structNew();
+                response.content['user'] = user;
                 restSetResponse( response );
             }
         </cfscript>
+
     </cffunction>
 
 

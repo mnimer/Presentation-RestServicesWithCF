@@ -1,11 +1,11 @@
 <cfcomponent
         REST="true"
-        RESTPATH="/productService">
+        RESTPATH="/rmm2Collection">
 
 
     <!---
     URL ==========================================
-    GET: http://localhost:8500/productService/products/search?q=
+    GET: http://localhost:8500/rest/services/rmm2Collection/products/search.{format}?q=
     --->
 
     <cffunction name="searchProducts"
@@ -13,7 +13,7 @@
                 HTTPMETHOD="GET"
                 RESTPATH="/products/search">
 
-        <cfargument name="q" restargsource="query"/>
+        <cfargument name="q" type="string" restargsource="query"/>
 
         <cfscript>
             // query database for products
@@ -23,7 +23,7 @@
 
     <!---
     URL ==========================================
-    GET: http://localhost:8500/productService/products/exclusive
+    GET: http://localhost:8500/rest/services/rmm2Collection/products/exclusive.{format}
     --->
 
     <cffunction name="getAllExclusiveProducts"
