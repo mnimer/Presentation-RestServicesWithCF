@@ -8,7 +8,7 @@ Built using [reveal.js](https://github.com/hakimel/reveal.js) and a custom plugi
 
 ## View the Presentation
 
-* [http://mnimer.github.io/ServicesWithCF-Presentation/#/](mnimer.github.io/ServicesWithCF-Presentation/)
+* [http://mnimer.github.io/ServicesWithCF-Presentation/#/](http://mnimer.github.io/ServicesWithCF-Presentation)
 
 ## Original Session Description
 
